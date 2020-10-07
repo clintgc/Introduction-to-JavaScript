@@ -19,7 +19,7 @@ Do the following:
 */
 let votingAge = 19;
 if (votingAge >= 18) {
-  console.log(true);
+  console.log(true, votingAge, " is old enough to vote.");
 }
 
 
@@ -67,11 +67,17 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
+/*
+Long form of the multiply function vs streamlined
+
 function multiply(a, b){
   return a * b;
 }
 console.log(multiply(2, 2));
+*/
 
+const multiply = (a,b) => console.log(a*b);
+multiply(2, 2)
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -127,7 +133,8 @@ function hungryDog(dogWeight, dogYears){
           return dogWeight * .05;
       } else if (dogYears => 1 && dogYears >= 0.66) {
           return dogWeight * .04;
-  } else { 
+  } 
+} else { 
 
     if (dogYears > 1 && dogWeight > 5){
       return dogWeight * .05;
@@ -167,7 +174,7 @@ function game(playerChoice){
   } else {
       machineChoice = "rock";
   } 
- console.log("Computer Choice: " + machineChoice);
+ console.log("The Machine chooses " + machineChoice);
 
   if (playerChoice === machineChoice) {
     return 'Draw';
@@ -187,15 +194,14 @@ function game(playerChoice){
         return "Rock wins!";
     }
   }
-  if (userChoice === "scissors"){
+  if (playerChoice === "scissors"){
     if(machineChoice === "paper") {
       return "Scissors Win!";
     } else {
         return "Rock wins!";
       }
     }
- // }
-};
+}
 console.log(game(playerChoice));
 
   
@@ -248,8 +254,8 @@ function annoyingSong(startNum){
   while (startNum > 0){
     console.log(startNum, " lbottles of soda, take one down pass it around (number left over) bottles of soda on the wall")
     startNum--;
+  }
 }
-  };
 annoyingSong(5);
 
 
@@ -280,7 +286,7 @@ function grade(studentScore){
   } else if (studentScore >= 90 && studentScore <= 100) {
     return "A";
   }
-};
+}
 console.log(grade(100));
   
   
