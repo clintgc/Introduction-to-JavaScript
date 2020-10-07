@@ -76,8 +76,8 @@ function multiply(a, b){
 console.log(multiply(2, 2));
 */
 
-const multiply = (a,b) => console.log(a*b);
-multiply(2, 2)
+const multiply = (a,b) => (a*b);
+console.log(multiply(2, 2));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -127,26 +127,26 @@ Use the hungryDog function and feeding requirements below to do the following:
 
 function hungryDog(dogWeight, dogYears){
   if (dogYears < 1) {  
-    if (dogYears => 1 && dogYears >= 0.16 && dogYears <= 0.33) {
+    if (dogYears >= 0.16 && dogYears <= 0.33) {
       return dogWeight * 0.1;
-      } else if (dogYears => 1 && dogYears >= 0.41 && dogYears <= 0.58) {
+      } else if (dogYears >= 0.41 && dogYears <= 0.58) {
           return dogWeight * .05;
-      } else if (dogYears => 1 && dogYears >= 0.66) {
+      } else if (dogYears >= 0.66) {
           return dogWeight * .04;
   } 
 } else { 
 
-    if (dogYears > 1 && dogWeight > 5){
+    if (dogWeight < 5){
       return dogWeight * .05;
-  } else if (dogYears > 1 && dogWeight >= 6 || dogWeight > 10) {
+  } else if (dogWeight >= 6 && dogWeight <= 10) {
       return dogWeight * .04;
-  } else if (dogYears > 1 && dogWeight >= 11 || dogWeight > 15) {
+  } else if (dogWeight >= 11 && dogWeight <= 15) {
       return dogWeight * .03;
-  } else if (dogYears > 1 && dogWeight >= 15)
+  } else if (dogWeight >= 15)
       return dogWeight * .02;
   }
 }
-  console.log(hungryDog(10, 1))
+  console.log(hungryDog(15, 1))
 
 
 
@@ -163,46 +163,26 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
-let playerChoice = prompt ("Rochambeau?");
-function game(playerChoice){
-  
-  let machineChoice = Math.floor(Math.random()*3);
-  if (machineChoice === 1) {
+var machineChoice = Math.floor(Math.random()*3);
+function game(playerChoice, machineChoice){
+  if (machineChoice === 0) {
     machineChoice = "scissors";
-  } else if (machineChoice === 2) {
+  } else if (machineChoice === 1) {
       machineChoice = "paper";
-  } else {
+  } else if (machineChoice === 2) {
       machineChoice = "rock";
   } 
  console.log("The Machine chooses " + machineChoice);
-
   if (playerChoice === machineChoice) {
-    return 'Draw';
+    return "it's a tie";
   }
-  if (playerChoice === "paper") {
-      if (machineChoice === "rock")
-      return "Paper wins!";
-  } else {
-      if (machineChoice === "scissors"){
-        return "Scissors win!";
+  if (machineChoice === "paper") {
+      return "you lose!";
+  } else if (machineChoice === "scissors"){
+        return "you win!";
       }  
-  }
-  if (playerChoice === "rock"){
-    if(machineChoice === "paper"){
-      return "Paper wins!";
-    } else {
-        return "Rock wins!";
-    }
-  }
-  if (playerChoice === "scissors"){
-    if(machineChoice === "paper") {
-      return "Scissors Win!";
-    } else {
-        return "Rock wins!";
-      }
-    }
 }
-console.log(game(playerChoice));
+console.log(game("rock", machineChoice));
 
   
   
@@ -219,10 +199,10 @@ Using the miles function below do the following:
 */
 
 function miles(totalKM){
-    let totalMiles = totalKM * 1.6;
-    console.log(totalMiles);
+    let totalMiles = totalKM * 0.621371;
+    return(totalMiles);
   }
-console.log(miles(10));  
+console.log(miles(1));  
 
 //Task 5b - Feet to CM
 /*
@@ -233,10 +213,10 @@ Using the feet function below do the following:
 */
 
 function feet(totalCM){
-    let totalFt = totalCM * 30.48;
-    console.log(totalFt);
+    let totalFt = totalCM / 30.48;
+    return(totalFt);
   }
-console.log(feet(10000));
+console.log(feet(160));
  
 
 
@@ -251,12 +231,11 @@ Using the annoyingSong function below do the following:
 */
 
 function annoyingSong(startNum){
-  while (startNum > 0){
-    console.log(startNum, " lbottles of soda, take one down pass it around (number left over) bottles of soda on the wall")
-    startNum--;
+  for (let i = startNum; i > 0; i--){
+    return `${startNum} bottles of soda on the wall, ${startNum} bottles of soda, take one down pass it around ${startNum - 1} bottles of soda on the wall`
   }
 }
-annoyingSong(5);
+console.log(annoyingSong(5));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -276,18 +255,18 @@ Using the grade function below do the following:
   
 function grade(studentScore){
   if (studentScore < 60) {
-    return "F";
+    return "you got a F";
   } else if (studentScore >= 60 && studentScore <= 69) {
-    return "D";
+    return "you got a D";
   } else if (studentScore >= 70 && studentScore <= 79) {
-    return "C";
+    return "you got a C";
   } else if (studentScore >= 80 && studentScore <= 89) {
-    return "B";
+    return "you got a B";
   } else if (studentScore >= 90 && studentScore <= 100) {
-    return "A";
+    return "you got a A";
   }
 }
-console.log(grade(100));
+console.log(grade(80));
   
   
 
